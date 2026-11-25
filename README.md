@@ -2,8 +2,6 @@
 
 A machine learning project that classifies URLs as phishing or legitimate using hand-crafted features extracted from the URL and its page. The model is a `RandomForestClassifier` trained on a tabular dataset of 47 numeric features.
 
-> **Status:** Trained and evaluated baseline. Not yet tuned, retrained on the full dataset, or packaged for deployment. See [Limitations](#limitations-and-next-steps).
-
 ---
 
 ## Table of Contents
