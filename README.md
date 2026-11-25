@@ -196,25 +196,3 @@ probabilities = model.predict_proba(X)[:, 1]
 ```
 
 > Confirm the meaning of label `1` (phishing) against the dataset documentation before relying on predictions.
-
-## Limitations and Next Steps
-
-**Limitations**
-
-- **Label meaning is unconfirmed.** This README assumes `1` = phishing. Verify this against the source documentation.
-- **Trained on 80% of the data.** The saved model was fit on the training split only. Retraining on all 9,581 rows is recommended before deployment.
-- **No hyperparameter tuning.** Results are a baseline.
-- **No group-aware validation.** The dataset has no entity identifier, so repeated source domains could not be checked for leakage. Repeats could inflate scores.
-- **Deployment dependency.** The most important features depend on fetching page content. Performance may drop if that content is unavailable at prediction time.
-- **Default decision threshold.** Predictions use the standard 0.5 cutoff, which has not been tuned to the costs of false positives versus false negatives.
-
-**Next steps**
-
-- [ ] Confirm the label mapping
-- [ ] Tune hyperparameters with cross-validation
-- [ ] Compare against a simple baseline (e.g., logistic regression)
-- [ ] Retrain the final model on the full dataset
-- [ ] Run group-aware validation if entity identifiers can be recovered
-- [ ] Analyse the misclassified samples for patterns
-- [ ] Pin library versions and add a `requirements.txt`
-- [ ] Write a model card documenting intended use and limitations
